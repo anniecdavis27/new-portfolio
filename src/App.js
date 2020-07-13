@@ -1,8 +1,12 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './Components/Home/Home'
 import Header from './Components/Header/Header'
+import Works from './Components/Works/Works'
+import Bio from './Components/Bio/Bio'
+import Resume from './Components/Resume/Resume'
+import Contact from './Components/Contact/Contact'
 import { useTheme } from './Components/ThemeContext';
 import { createGlobalStyle } from "styled-components"
 import { backgroundColor, textColor } from './Components/theme';
@@ -21,7 +25,13 @@ function App() {
     <div className="App">
       <GlobalStyles />
       <Header />
+      <Switch>
       <Route exact path='/' render={routerProps => <Home {...routerProps} themeToggle={themeToggle} />} />
+      <Route path='/works' component={Works}/>
+      <Route path='/bio' component={Bio}/>
+      <Route path='/resume' component={Resume}/>
+      <Route path='/contact' component={Contact}/>
+      </Switch>
     </div>
   );
 }
