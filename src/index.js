@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './normalize.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from "react-router-dom";
+import { MyThemeProvider } from "./Components/ThemeContext";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Router>
+    <MyThemeProvider>
     <App />
-  </React.StrictMode>,
+    </MyThemeProvider>
+  </Router>,
   document.getElementById('root')
 );
 

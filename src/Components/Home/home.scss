@@ -1,0 +1,144 @@
+@import '../../_config.scss';
+
+.home-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+    font-family: $montserrat;
+    margin-left: 20px;
+}
+
+.dark-toggle {
+    width: 150px;
+    margin-top: 15px;
+    height: 60px;
+    border-radius: 30px;
+    border: 3px solid;
+    font-size: 20px;
+    z-index: 1;
+    box-shadow: 2px 1px 2px;
+}
+
+h1 {
+    font-family: $narrow;
+    font-size: 65px;
+    margin-bottom: 15px;
+    font-weight: lighter;
+    text-shadow: 2px 1px 2px;
+}
+
+h3 {
+    font-weight: lighter;
+    font-size: 30px;
+    opacity: .7;
+    margin-bottom: 20px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    text-shadow: 2px 1px 2px;
+}
+
+@function particles($max) {
+    $val: 2px 2px $color-particle;
+    @for $i from 1 through $max {
+       $val: #{$val},
+       random($spacing)+px random($spacing)+px $color-particle;
+    }
+    @return $val;
+ }
+ 
+ @mixin particles($max) {
+    box-shadow: particles($max);
+ }
+ 
+ html, body {
+     height: 100%;
+ } 
+ 
+ .page-bg,
+ .animation-wrapper {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+ }
+ 
+ .page-bg { 
+   background-size: cover;
+   z-index: -1;
+ }
+ 
+ .particle,
+ .particle:after {
+   background: transparent;
+ }
+ 
+ .particle:after {
+   position: absolute;
+   content: "";
+   top: $spacing;
+ }
+ 
+ .particle-1 {
+   animation: animParticle $time-1 linear infinite;
+   @include particles(600);
+   height: 2px;
+   width: 2px;
+ }
+ 
+ .particle-1:after {
+   @include particles(600);
+   height: 2px;
+   width: 2px;
+ }
+ 
+ .particle-2 {
+   animation: animParticle $time-2 linear infinite;
+   @include particles(200);
+   height: 3px;
+   width: 3px;
+ }
+ 
+ .particle-2:after {
+   @include particles(200);
+   height: 3px;
+   width: 3px;
+ }
+ 
+ .particle-3 {
+   animation: animParticle $time-3 linear infinite;
+   @include particles(100);
+   height: 4px;
+   width: 4px;
+ }
+ 
+ .particle-3:after {
+   @include particles(100);
+   height: 4px;
+   width: 4px;
+ }
+ 
+ .particle-4 {
+   animation: animParticle $time-4 linear infinite;
+   @include particles(400);
+   height: 2px;
+   width: 2px;
+ }
+ 
+ .particle-4:after {
+   @include particles(400);
+   height: 2px;
+   width: 2px;
+ }
+ 
+ @keyframes animParticle {
+   from { transform: translateY(2px); }
+   to   { transform: translateY($spacing * -1); }
+ }
+ 
+ .page-wrapper {
+     text-align: center;
+     color: #fff;
+     z-index: -1;
+ }
