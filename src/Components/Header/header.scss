@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Lexend+Zetta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import '../../_config.scss';
 
 .navflex {
     display: flex;
@@ -52,7 +51,7 @@ img {
 .hamburger-patty {
     width: 30px;
     height: 3px;
-    background-color: #00a2ff;
+    background-color: $mediumbluetheme;
     transition: all .5 ease-in-out;
     cursor: pointer;
 }
@@ -63,7 +62,7 @@ img {
     position: absolute;
     width: 30px;
     height: 3px; 
-    background-color: #00a2ff;
+    background-color: $mediumbluetheme;
 }
 
 .hamburger-patty::before {
@@ -104,18 +103,18 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #000224a4;
     height: 240px;
 }
 
 .nav-link {
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
+    color: $mediumbluetheme;
+    font-family: $montserrat;
     font-size: 25px;
+    text-shadow: none;
 }
 
 .nav-link:hover {
-    color: #ffbb00;
+    color: #aa7d00;
 }
 
 @media(hover: hover) and (pointer: fine) {
@@ -123,27 +122,27 @@ img {
         justify-content: flex-start;
         align-items: center;
     }
+
+    img {
+        width: 35px;
+        padding-top: 15px;
+        padding-left: 15px;
+    }
     
     .nav-link-desktop {
         visibility: visible;
-        width: 150px;
+        width: 175px;
         text-align: center;
         height: 100%;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 20px;
-    }
-
-    #nav-three {
-        height: 24px;
-        cursor: pointer;
-    }
-
-    #nav-three:hover {
-        color: #ffbb00;
+        font-family: $montserrat;
+        font-size: 22px;
+        font-weight: lighter;
+        color: $mediumbluetheme;
+        padding-top: 15px;
     }
 
     .nav-link-desktop:hover {
-        color: #ffbb00;
+        color: #aa7d00;
     }
 
     .hamburger-btn {

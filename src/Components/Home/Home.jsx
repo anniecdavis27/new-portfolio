@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './home.scss'
 import styled, { withTheme } from 'styled-components';
 import { backgroundColor, textColor } from '../theme';
@@ -11,6 +11,18 @@ function Home(props) {
     color: ${textColor};
 
     `;
+
+    const [buttonStatus, setButtonStatus] = useState(false)
+
+    const handleThemeToggle = (e) => {
+        if(buttonStatus === false) {
+            setButtonStatus(true)
+
+         } else {
+            setButtonStatus(false)
+
+         }
+    }
 
   return (
     <div className='home-flex'>
@@ -28,7 +40,7 @@ function Home(props) {
                 Engineer
             </h3>
         </div>
-        <Button onClick={() => themeToggle.toggle()} className='dark-toggle'>Light Mode</Button>
+        <Button onClick={() => themeToggle.toggle()} className='dark-toggle'>{!buttonStatus ? 'Light Mode' : 'Dark Mode'}</Button>
     </div>
   );
 }
