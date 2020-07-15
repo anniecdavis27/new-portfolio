@@ -3,12 +3,22 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import apiUrl from '../../apiConfig'
 import './works.scss'
+import styled, { withTheme } from 'styled-components';
+import { backgroundColor, textColor, liBackgroundColor } from '../theme';
 
 function Works(props) {
-    console.log('Works - props', props)
-    console.log(apiUrl)
+
 
   const [projects, setProjects] = useState([]);
+
+  const Button = styled.button`
+    background: ${backgroundColor};
+    color: ${textColor};
+    `;
+
+    const LI = styled.li`
+        background: ${liBackgroundColor};
+    `
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -26,10 +36,10 @@ function Works(props) {
 
 
   const projectsArr = projects.map((item) => (
-    <li key={item._id}>
+    <LI key={item._id}>
         <h2>{item.name}</h2>
       <Link to={`/works/${item._id}`}>More Info...</Link>
-    </li>
+    </LI>
   ));
     
   return (
@@ -37,10 +47,10 @@ function Works(props) {
        <h1>Projects</h1>
       <ul>{projectsArr}</ul>
       <Link to={'/create-project'}>
-      <button className='add-project'>Add Project</button>
+      <Button className='add-project'>Add Project</Button>
       </Link>
     </div>
   );
 }
 
-export default Works;
+export default withTheme(Works);
