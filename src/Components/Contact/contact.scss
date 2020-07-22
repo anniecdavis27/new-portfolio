@@ -1,0 +1,53 @@
+@import '../../_config.scss';
+
+Button {
+    border: 3px solid;
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+}
+
+form {
+    width: 90%;
+    margin: 30px auto;
+    
+}
+
+.form-label{
+    font-family: $montserrat;
+    padding: 5px;
+}
+
+.form-input {
+    width: 100%;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.form-input-big {
+    height: 75px;
+}
+
+.socials-flex {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 30px auto;
+    justify-content: space-evenly;
+}
+
+.social-img {
+    width: 50px;
+}
+
+@media (orientation: landscape){
+    form {
+        width: 50%;  
+    }
+
+    .socials-flex {
+        width: 50%;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+}

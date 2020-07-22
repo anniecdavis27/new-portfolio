@@ -1,0 +1,44 @@
+@import '../../_config.scss';
+
+.title {
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.bio-content-flex {
+    display: flex;
+    flex-direction: column;
+    font-family: $montserrat;
+    width: 90%;
+    margin: auto;
+}
+
+.annie-pic {
+    width: 90%;
+    max-width: 400px;
+    border-bottom: 10px solid rgb(90, 0, 0);
+    padding: 0px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bio-subheading {
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.content {
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+@media (orientation: landscape) {
+    .bio-content-flex {
+        flex-direction: row;
+    }
+}

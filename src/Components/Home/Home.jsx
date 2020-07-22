@@ -4,6 +4,7 @@ import styled, { withTheme } from 'styled-components';
 import { backgroundColor, textColor } from '../theme';
 
 function Home(props) {
+    console.log('home', props)
     const themeToggle = props.themeToggle
 
     const Button = styled.button`
@@ -12,17 +13,7 @@ function Home(props) {
 
     `;
 
-    const [buttonStatus, setButtonStatus] = useState(false)
-
-    const handleThemeToggle = (e) => {
-        if(buttonStatus === false) {
-            setButtonStatus(true)
-
-         } else {
-            setButtonStatus(false)
-
-         }
-    }
+    const mode = props.theme.mode
 
   return (
     <div className='home-flex'>
@@ -40,7 +31,7 @@ function Home(props) {
                 Engineer
             </h3>
         </div>
-        <Button onClick={() => themeToggle.toggle()} className='dark-toggle'>{!buttonStatus ? 'Light Mode' : 'Dark Mode'}</Button>
+        <Button onClick={() => themeToggle.toggle()} className='dark-toggle'>{mode === 'dark' ? 'Light Mode' : 'Dark Mode'}</Button>
     </div>
   );
 }

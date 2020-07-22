@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import apiUrl from '../../apiConfig'
 import './works.scss'
 import styled, { withTheme } from 'styled-components';
-import { backgroundColor, textColor, liBackgroundColor } from '../theme';
+import { liBackgroundColor, liTextColor } from '../theme';
 
 function Works(props) {
 
 
   const [projects, setProjects] = useState([]);
 
-  const Button = styled.button`
-    background: ${backgroundColor};
-    color: ${textColor};
-    `;
-
     const LI = styled.li`
         background: ${liBackgroundColor};
+        color: ${liTextColor};
     `
 
   useEffect(() => {
@@ -37,18 +32,18 @@ function Works(props) {
 
   const projectsArr = projects.map((item) => (
     <LI key={item._id}>
-        <h2>{item.name}</h2>
-      <Link to={`/works/${item._id}`}>More Info...</Link>
+        <h2 className='li-title'>{item.name}</h2>
+        <p className="project-desc">{item.description}</p>
+        <a href={item.urlLive} target='_blank' rel='noopener noreferrer'><button className='project-btn'>Live Site</button></a>
+        <br />
+        <a href={item.urlGit} target='_blank' rel='noopener noreferrer'><button className='project-btn'>Github Repository</button></a>
     </LI>
   ));
     
   return (
-    <div className='home-flex'>
+    <div className='works-flex'>
        <h1>Projects</h1>
-      <ul>{projectsArr}</ul>
-      <Link to={'/create-project'}>
-      <Button className='add-project'>Add Project</Button>
-      </Link>
+      <ul className='works-flex-content'>{projectsArr}</ul>
     </div>
   );
 }

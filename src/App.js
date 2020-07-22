@@ -4,9 +4,6 @@ import './App.css';
 import Home from './Components/Home/Home'
 import Header from './Components/Header/Header'
 import Works from './Components/Works/Works'
-import Work from './Components/Works/Work'
-import WorkCreate from './Components/Works/WorkCreate'
-import WorkEdit from './Components/Works/WorkEdit'
 import Bio from './Components/Bio/Bio'
 import Resume from './Components/Resume/Resume'
 import Contact from './Components/Contact/Contact'
@@ -31,13 +28,10 @@ function App(props) {
       <Header />
       <Switch>
       <Route exact path='/' render={routerProps => <Home {...routerProps} themeToggle={themeToggle} />} />
-      <Route path='/works/:id/edit' component={WorkEdit} />
-      <Route path='/works/:id' component={Work} />
       <Route path='/works' component={Works}/>
       <Route path='/bio' component={Bio}/>
       <Route path='/resume' component={Resume}/>
       <Route path='/contact' component={Contact}/>
-      <Route path='/create-project' component={WorkCreate} />
       </Switch>
     </div>
   );
