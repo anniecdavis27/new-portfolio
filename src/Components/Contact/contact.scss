@@ -5,6 +5,7 @@ Button {
     width: 150px;
     height: 50px;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 form {
@@ -38,6 +39,7 @@ form {
 
 .social-img {
     width: 50px;
+    cursor: pointer;
 }
 
 @media (orientation: landscape){

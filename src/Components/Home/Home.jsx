@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './home.scss'
 import styled, { withTheme } from 'styled-components';
 import { backgroundColor, textColor } from '../theme';
@@ -27,7 +27,7 @@ function Home(props) {
 
             <h1>Annie Chase Davis</h1>
             <h3>
-                Front-End/UI<br />
+                Full-Stack/UI<br />
                 Engineer
             </h3>
         </div>

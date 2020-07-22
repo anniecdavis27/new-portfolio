@@ -31,7 +31,7 @@ function Works(props) {
 
 
   const projectsArr = projects.map((item) => (
-    <LI key={item._id}>
+    <LI key={item._id} className='project-li'>
         <h2 className='li-title'>{item.name}</h2>
         <p className="project-desc">{item.description}</p>
         <a href={item.urlLive} target='_blank' rel='noopener noreferrer'><button className='project-btn'>Live Site</button></a>

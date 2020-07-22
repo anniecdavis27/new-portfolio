@@ -8,7 +8,7 @@
     margin: auto;
 }
 
-LI {
+.project-li {
     list-style-type: none;
     width: 90%;
     padding: 15px;
@@ -26,6 +26,7 @@ LI {
 .project-btn {
     width: 150px;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .works-flex-content {
@@ -43,7 +44,7 @@ LI {
         flex-wrap: wrap;
     }
 
-    LI {
+    .project-li {
         list-style-type: none;
         min-width: 300px;
         max-width: 300px;

@@ -87,7 +87,7 @@ function Resume() {
         </div>
         
       </div>
-      <a href='https://drive.google.com/file/d/18n3TWH738JS3-KZImTKW6e37vOh9m9oi/view?usp=sharing' target='_blank' className='btn'><Button className='download-btn'>Download Resume</Button></a>
+      <a href='https://drive.google.com/file/d/18n3TWH738JS3-KZImTKW6e37vOh9m9oi/view?usp=sharing' target='_blank' rel='noopener noreferrer' className='btn'><Button className='download-btn'>Download Resume</Button></a>
     </div>
   );
 }
